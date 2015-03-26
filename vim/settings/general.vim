@@ -1,3 +1,5 @@
+set rtp+=~/.vim/bundle/Vundle.vim
+
 "Enable filetypes
 set nocp
 filetype plugin indent on

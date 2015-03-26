@@ -20,3 +20,5 @@ Bundle 'tomtom/stakeholders_vim'
 
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
+
+Bundle 'jamessan/vim-gnupg'
