@@ -11,6 +11,7 @@
 let mapleader=";"
 "
 " buffer navigation in normal mode
+" http://bit.ly/1CgDcyV
 nnoremap <leader>n :bnext<CR>
 nnoremap <leader>p :bprev<CR>
 nnoremap <leader>wq :bdelete<CR>
