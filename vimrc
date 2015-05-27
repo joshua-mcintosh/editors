@@ -3,7 +3,13 @@
 " https://github.com/smt/dotfiles/blob/master/vim/vim.symlink/vimrc.symlink
 " ----------------------------------------------------------------------------
 
-source ~/.vimrc_local
+" ----------------------------------------------------------------------------
+" Include local vim config
+" ----------------------------------------------------------------------------
+
+if filereadable(expand("~/.vimrc_local"))
+    source ~/.vimrc_local
+end
 source ~/.vim/settings/general.vim
 source ~/.vim/settings/bundles.vim
 source ~/.vim/settings/appearance.vim
@@ -29,10 +35,4 @@ endfor
 let g:Powerline_symbols = 'fancy'
 
 
-" ----------------------------------------------------------------------------
-" Include local vim config
-" ----------------------------------------------------------------------------
 
-if filereadable(expand("~/.vimrc.local"))
-    source ~/.vimrc.local
-end

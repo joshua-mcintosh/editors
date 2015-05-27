@@ -45,7 +45,9 @@ if has("autocmd")
 
 	"" Python
 	highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-	au FileType python setlocal ts=4 sts=4 sw=4 et			  " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+        " PEP8 considered harmful at google (well, not harmful, but not the
+        " style)
+	" au FileType python setlocal ts=4 sts=4 sw=4 et			  " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
 	au FileType python match OverLength /\%79v.\+/
 
 	"" PHP
