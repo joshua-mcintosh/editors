@@ -1,3 +1,4 @@
+"
 " ----------------------------------------------------------------------------
 " Mappings
 " ----------------------------------------------------------------------------
@@ -12,6 +13,7 @@ let mapleader=";"
 "
 " buffer navigation in normal mode
 " http://bit.ly/1CgDcyV
+"
 nnoremap <leader>n :bnext<CR>
 nnoremap <leader>p :bprev<CR>
 nnoremap <leader>wq :bdelete<CR>
@@ -93,10 +95,10 @@ nnoremap <Leader>s :%s//g<left><left>
 " Append modeline after last line in buffer.
 " Use substitute() instead of printf() to handle '%%s' modeline in LaTeX files.
 function! AppendModeline()
-    let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d :",
-        \ &tabstop, &shiftwidth, &textwidth)
-    let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
-    silent! call append(line("$"), l:modeline)
+  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d :",
+    \ &tabstop, &shiftwidth, &textwidth)
+  let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
+  silent! call append(line("$"), l:modeline)
 endfunction
 
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
@@ -122,6 +124,7 @@ nmap <Leader>l :set list!<CR>
 " This is useful when you edit a file in a directory that doesn't
 " (yet) exist
 nmap <Leader>md :!mkdir -p %:p:h
+nmap <Leader>md :chdir %:p:h
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e

@@ -7,6 +7,18 @@ filetype plugin on
 filetype indent on
 filetype plugin indent on
 
+
+" Called to create a directory if it doesn't exist.
+function s:MkNonExDir(file, buf)
+  if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+    let dir=fnamemodify(a:file, ':h')
+    if !isdirectory(dir)
+      call mkdir(dir, 'p')
+    endif
+  endif
+endfunction
+
+
 if has("autocmd")
 	" Remember last location in a file
 	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
@@ -87,6 +99,11 @@ if has("autocmd")
 	" Read certain files right, please!
 	autocmd BufNewFile,BufRead *.page,*.md,*.md.txt set ft=markdown
 	autocmd BufNewFile,BufRead *.ldg,*.ledger setf ledger | comp ledger
+
+        augroup BWCCreateDir
+          autocmd!
+          autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+        augroup END
 endif
 
 

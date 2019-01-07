@@ -22,3 +22,5 @@ Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
 
 Bundle 'jamessan/vim-gnupg'
+
+Bundle 'christoomey/vim-tmux-navigator'
